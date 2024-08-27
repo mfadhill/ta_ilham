@@ -135,6 +135,7 @@ class DashboardController extends Controller
             'sub_feature' => 'required',
             'latitude' => 'required',
             'longitude' => 'required',
+            'deskrip' => 'required',
             'img' => 'required|mimes:jpg,jpeg,png',
         ]);
 

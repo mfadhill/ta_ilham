@@ -69,16 +69,16 @@
                 <tr>
                     <th
                         class="px-14 py-3 border-b-2 border-black text-left text-sm leading-4 text-black-100  tracking-wider">
-                        Name</th>
+                        Nama</th>
                     <th
                         class="px-14 py-3 border-b-2 border-black text-left text-sm leading-4 text-black-100  tracking-wider">
-                        Location</th>
+                        Desa</th>
+                    {{-- <th
+                        class="px-14 py-3 border-b-2 border-black text-left text-sm leading-4 text-black-100  tracking-wider">
+                        Feature</th> --}}
                     <th
                         class="px-14 py-3 border-b-2 border-black text-left text-sm leading-4 text-black-100  tracking-wider">
-                        Feature</th>
-                    <th
-                        class="px-14 py-3 border-b-2 border-black text-left text-sm leading-4 text-black-100  tracking-wider">
-                        Sub_Feature</th>
+                        Kecamatan</th>
                     <th
                         class="px-14 py-3 border-b-2 border-black text-left text-sm leading-4 text-black-100  tracking-wider ">
                         Status </th>
@@ -92,8 +92,8 @@
                         </td>
                         <td class="px-14 py-4 whitespace-no-wrap border-b text-black-900 border-gray-500 text-sm leading-5">
                             {{ $d['location'] }}</td>
-                        <td class="px-14 py-4 whitespace-no-wrap border-b text-black-900 border-gray-500 text-sm leading-5">
-                            {{ $d['feature'] }}</td>
+                        {{-- <td class="px-14 py-4 whitespace-no-wrap border-b text-black-900 border-gray-500 text-sm leading-5">
+                            {{ $d['feature'] }}</td> --}}
                         <td class="px-14 py-4 whitespace-no-wrap border-b text-black-900 border-gray-500 text-sm leading-5">
                                 {{ $d['sub_feature'] }}
                         </td>
@@ -123,7 +123,7 @@
                                             d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
                                     </svg>
                                 </a> --}}
-                               
+
                                 <div class="flex justify-center">
                                     <form action="/a_daftar/{{ $d->id }}" method="POST">
                                         @method('delete')

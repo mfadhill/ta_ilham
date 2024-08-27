@@ -18,7 +18,7 @@
       <a class="px-4 py-2 mt-2 text-sm font-bold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-green-600 md:mt-0 md:ml-4 hover:text-black focus:text-black hover:bg-green-200 focus:bg-green-200 focus:outline-none focus:shadow-outline {{ $active === 'a_maps' ? 'active: bg-white text-black' : ' ' }}" href="/a_maps">Maps</a>
       <a class="px-4 py-2 mt-2 text-sm font-bold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-green-600 md:mt-0 md:ml-4 hover:text-black focus:text-black hover:bg-green-200 focus:bg-green-200 focus:outline-none focus:shadow-outline {{ $active === 'a_info' ? 'active: bg-white text-black' : ' ' }}" href="/a_info">Info</a>
       <a class="px-4 py-2 mt-2 text-sm font-bold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-green-600 md:mt-0 md:ml-4 hover:text-black focus:text-black hover:bg-green-200 focus:bg-green-200 focus:outline-none focus:shadow-outline{{ $active === 'a_daftar' ? 'active: bg-white text-black' : ' ' }}" href="/a_daftar"> Data </a>
-      <a class="px-4 py-2 mt-2 text-sm font-bold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-green-600 md:mt-0 md:ml-4 hover:text-black focus:text-black hover:bg-green-200 focus:bg-green-200 focus:outline-none focus:shadow-outline{{ $active === 'a_contact' ? 'active: bg-white text-black' : ' ' }}" href="/a_contact"> Contact </a>
+      {{-- <a class="px-4 py-2 mt-2 text-sm font-bold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-green-600 md:mt-0 md:ml-4 hover:text-black focus:text-black hover:bg-green-200 focus:bg-green-200 focus:outline-none focus:shadow-outline{{ $active === 'a_contact' ? 'active: bg-white text-black' : ' ' }}" href="/a_contact"> Contact </a> --}}
       {{-- <a class="px-4 py-2 mt-2 text-sm font-bold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-green-600 md:mt-0 md:ml-4 hover:text-black focus:text-black hover:bg-green-200 focus:bg-green-200 focus:outline-none focus:shadow-outline" href="#">Contact</a> --}}
       <div @click.away="open = false" class="relative" x-data="{ open: false }">
         <button @click="open = !open" class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-bold text-left bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:focus:bg-green-600 dark-mode:hover:bg-green-600 md:w-auto md:inline md:mt-0 md:ml-4 hover:text-green-900 focus:text-green-900 hover:bg-green-200 focus:bg-green-200 focus:outline-none focus:shadow-outline">
@@ -30,7 +30,7 @@
             <a class="block px-2 py-2 mt-2 text-sm font-bold bg-transparent rounded-lg z-10 dark-mode:bg-transparent dark-mode:hover:bg-green-600 md:mt-0 md:ml-4 hover:text-black focus:text-black hover:bg-green-200 focus:bg-green-200 focus:outline-none focus:shadow-outline" href="/logout">Logout</a>
           </div>
         </div>
-      </div>    
+      </div>
     </nav>
     @endif
 
@@ -49,8 +49,8 @@
       <a class="px-4 py-2 mt-2 text-sm font-bold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-green-600 md:mt-0 md:ml-4 hover:text-black focus:text-black hover:bg-green-200 focus:bg-green-200 focus:outline-none focus:shadow-outline {{ $active === 'home' ? 'active: bg-white text-black' : ' ' }}" href="/">Home</a>
         <a class="px-4 py-2 mt-2 text-sm font-bold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-green-600 md:mt-0 md:ml-4 hover:text-black focus:text-black hover:bg-green-200 focus:bg-green-200 focus:outline-none focus:shadow-outline {{ $active === 'maps' ? 'active: bg-white text-black' : ' ' }}" href="/maps">Maps</a>
         <a class="px-4 py-2 mt-2 text-sm font-bold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-green-600 md:mt-0 md:ml-4 hover:text-black focus:text-black hover:bg-green-200 focus:bg-green-200 focus:outline-none focus:shadow-outline {{ $active === 'info' ? 'active: bg-white text-black' : ' ' }}" href="/info"> Info </a>
-        <a class="px-4 py-2 mt-2 text-sm font-bold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-green-600 md:mt-0 md:ml-4 hover:text-black focus:text-black hover:bg-green-200 focus:bg-green-200 focus:outline-none focus:shadow-outline {{ $active === 'contact' ? 'active: bg-white text-black' : ' ' }}" href="/contact"> Contact </a>
-        
+        {{-- <a class="px-4 py-2 mt-2 text-sm font-bold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-green-600 md:mt-0 md:ml-4 hover:text-black focus:text-black hover:bg-green-200 focus:bg-green-200 focus:outline-none focus:shadow-outline {{ $active === 'contact' ? 'active: bg-white text-black' : ' ' }}" href="/contact"> Contact </a> --}}
+
       </nav>
       @endauth
   </div>

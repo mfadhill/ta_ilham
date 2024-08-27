@@ -17,38 +17,37 @@
                     <div class="ml-6 text-lg">
                         <h2 class="mb-2 font-bold leading-5 text-xl">
                             Location : <span>
-                        {{ $daftar->location }}
+                                {{ $daftar->location }}
                         </h2>
                         <hr class="w-full my-2 border-gray-300 text-xl" />
                         <h2 class="mb-2 font-bold leading-5">
                             Sub Feature : <span>
-                                {{ $daftar->sub_feature }} 
+                                {{ $daftar->sub_feature }}
                         </h2>
                         <hr class="w-full my-2 border-gray-300 text-xl" />
                         <h2 class="mb-2 font-bold leading-5">
-                           Elevation : <span>
+                            Elevation : <span>
                                 {{ $daftar->elevation }}
                         </h2>
                         <hr class="w-full my-2 border-gray-300 text-xl" />
                         <h2 class="mb-2 font-bold leading-5">
                             Description : <span>
-                                 {{ $daftar->deskrip }}
-                         </h2>
+                                {{ $daftar->deskrip }}
+                        </h2>
                     </div>
                 </div>
             </div>
             <div class="grid grid-cols-2 gap-5">
-                <img class="object-cover w-full h-56 col-span-2 rounded shadow-lg" src="{{ asset('/storage/'. $daftar->img) }}"
-                    alt="" />
+                <img class="object-cover w-full h-56 col-span-2 rounded shadow-lg"
+                    src="{{ asset('/storage/' . $daftar->img) }}" alt="" />
                 @foreach ($daftar->image as $daf)
-                    <img class="object-cover w-full h-48 rounded shadow-lg" src="{{ asset('/storage/'. $daf) }}" />
+                    <img class="object-cover w-full h-48 rounded shadow-lg" src="{{ asset('/storage/' . $daf) }}" />
                 @endforeach
             </div>
         </div>
 
         <div class="mt-4">
-    <div id="mapid" data-longitude="{{ $daftar->longitude }}" data-latitude="{{ $daftar->latitude }}"></div>
-</div>
+            <div id="mapid" data-longitude="{{ $daftar->longitude }}" data-latitude="{{ $daftar->latitude }}"></div>
+        </div>
     </div>
-   
 @endsection

@@ -23,6 +23,7 @@ class Arkeologis extends Migration
             $table->string('latitude');
             $table->string('longitude');
             $table->string('img')->nullable();
+            $table->string('deskrip')->nullable();
             $table->timestamps();
         });
     }
