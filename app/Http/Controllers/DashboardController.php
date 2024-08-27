@@ -228,29 +228,23 @@ class DashboardController extends Controller
         $request->validate([
             'name' => 'required',
             'location' => 'required',
-            'feature' => 'required',
             'sub_feature' => 'required',
-            'elevation' => 'required',
             'latitude' => 'required',
             'longitude' => 'required',
-            'fasilitas'   => 'required',
-            // 'kategori' => 'required',
-            // 'img'   => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'deskrip' => 'required',
             'deskripsi' => '',
-            // 'photos' => 'required'
         ]);
 
         $daftar = Arkeologi::find($id);
+
         if ($request->hasFile('img')) {
             $request->validate([
                 'img' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
-
             ]);
             $file_name = $request->img->getClientOriginalName();
             $image = $request->img->storeAs('thumbnail', $file_name);
             $daftar->img = $image;
         }
-
 
         if ($request->hasFile('photos')) {
             $photos = $request->file('photos');
@@ -259,36 +253,32 @@ class DashboardController extends Controller
                 $file_name = $photo->getClientOriginalName();
                 $image = $photo->storeAs('thumbnail', $file_name);
 
-                $image = Image::create(
-                    [
+                // Cek apakah gambar dengan nama yang sama sudah ada
+                $existingImage = Image::where('image', $image)->where('id_lokasi', $id)->first();
+                if (!$existingImage) {
+                    Image::create([
                         'image' => $image,
                         'id_lokasi' => $id
-                    ]
-                );
-                $image->save();
+                    ]);
+                } else {
+                    dd('Gambar sudah ada: ' . $image);
+                }
             }
         }
+
+        // Update data lainnya
         $daftar->name = $request->name;
         $daftar->location = $request->location;
-        $daftar->feature = $request->feature;
         $daftar->sub_feature = $request->sub_feature;
-        $daftar->elevation = $request->elevation;
         $daftar->latitude = $request->latitude;
         $daftar->longitude = $request->longitude;
         $daftar->deskrip = $request->deskrip;
-        DB::table('fasilitas_wisata')->where('id_lokasi', '=', $daftar->id)->delete();
-        $fasilitas = $request->fasilitas;
-        foreach ($fasilitas as $value) {
-            Wisatafasilitas::create([
-                'id_fasilitas' => 1,
-                'id_lokasi' => $daftar->id
-            ]);
-        }
-        // $daftar->deskripsi = $request->deskripsi;
+
         $daftar->save();
 
         return redirect('/a_daftar')->with('pesan', 'Data changed successfully');
     }
+
 
     public function destroy($id)
     {

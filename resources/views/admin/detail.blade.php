@@ -2,7 +2,7 @@
 
 @section('isi')
     <h1 class="mt-4 ml-10 text-3xl font-bold"> Information </h1>
-    <div class="px-4 py-6 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+    <div class="px-4 py-6 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-10">
         <div class="max-w-xl mb-4 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
             <h3
                 class="max-w-lg mb-6 font-sans text-2xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
@@ -12,31 +12,28 @@
             </h3>
         </div>
         <div class="grid max-w-screen-lg gap-8 lg:grid-cols-2 sm:mx-auto">
-            <div class="flex flex-col justify-center">
-                <div class="flex">
-                    <div class="ml-6 text-lg">
-                        <h2 class="mb-2 font-bold leading-5 text-xl">
-                            Location : <span>
-                                {{ $daftar->location }}
+            <div class="flex flex-col p-6 bg-white rounded-lg shadow-lg shadow-inherit">
+                <div class="flex flex-col space-y-4">
+                    <div>
+                        <h2 class="text-lg font-semibold text-gray-800">
+                            Desa <span class="font-normal">{{ $daftar->location }}</span>
                         </h2>
-                        <hr class="w-full my-2 border-gray-300 text-xl" />
-                        <h2 class="mb-2 font-bold leading-5">
-                            Sub Feature : <span>
-                                {{ $daftar->sub_feature }}
+                        <hr class="border-gray-300" />
+                    </div>
+                    <div>
+                        <h2 class="text-lg font-semibold text-gray-800">
+                            Sub Feature: <span class="font-normal">{{ $daftar->sub_feature }}</span>
                         </h2>
-                        <hr class="w-full my-2 border-gray-300 text-xl" />
-                        <h2 class="mb-2 font-bold leading-5">
-                            Elevation : <span>
-                                {{ $daftar->elevation }}
-                        </h2>
-                        <hr class="w-full my-2 border-gray-300 text-xl" />
-                        <h2 class="mb-2 font-bold leading-5">
-                            Description : <span>
-                                {{ $daftar->deskrip }}
+                        <hr class="border-gray-300" />
+                    </div>
+                    <div>
+                        <h2 class="text-lg font-semibold text-gray-800">
+                            Description: <span class="font-normal">{{ $daftar->deskrip }}</span>
                         </h2>
                     </div>
                 </div>
             </div>
+
             <div class="grid grid-cols-2 gap-5">
                 <img class="object-cover w-full h-56 col-span-2 rounded shadow-lg"
                     src="{{ asset('/storage/' . $daftar->img) }}" alt="" />
@@ -46,8 +43,10 @@
             </div>
         </div>
 
-        <div class="mt-4">
-            <div id="mapid" data-longitude="{{ $daftar->longitude }}" data-latitude="{{ $daftar->latitude }}"></div>
+        <div class="mt-8">
+            <h1 class="text-xl font-bold">Map Objek terdekat dari {{ $daftar->name }}</h1>
+            <div id="mapid" class="mt-3" data-longitude="{{ $daftar->longitude }}"
+                data-latitude="{{ $daftar->latitude }}"></div>
         </div>
     </div>
 @endsection
