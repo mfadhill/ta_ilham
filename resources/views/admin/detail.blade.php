@@ -22,7 +22,7 @@
                     </div>
                     <div>
                         <h2 class="text-lg font-semibold text-gray-800">
-                            Sub Feature: <span class="font-normal">{{ $daftar->sub_feature }}</span>
+                            Kecamatan: <span class="font-normal">{{ $daftar->sub_feature }}</span>
                         </h2>
                         <hr class="border-gray-300" />
                     </div>

@@ -53,8 +53,8 @@
                                     {{ $item->name }}
                                 </h5>
                             </div>
-                            <p class="block font-sans text-base leading-relaxed text-gray-700 antialiased font-bold">
-                                Kec : {{ $item->location }}
+                            <p class="block font-sans text-base leading-relaxed  antialiased font-bold">
+                                Desa : {{ $item->location }}
                             </p>
                         </div>
                         <div class="p-6 pt-6 relative mr-2">

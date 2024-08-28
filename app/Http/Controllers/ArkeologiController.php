@@ -12,16 +12,16 @@ class ArkeologiController extends Controller
 {
     public function home()
     {
-       
-        $data = Arkeologi::latest()->paginate(9);
-   
+
+        $data = Arkeologi::latest()->paginate(8);
+
         return view('user.home', [
             'title' => 'Home',
             'active' => 'home',
             'data' => $data,
         ]);
     }
-   
+
     public function maps()
     {
         $daftar = DB::table('arkeologis')
@@ -101,13 +101,13 @@ class ArkeologiController extends Controller
         ]);
     }
 
-    public function contact() 
+    public function contact()
     {
-        return view('user.contact',[
-        'title' => 'contact',
-        'active' => 'contact',
+        return view('user.contact', [
+            'title' => 'contact',
+            'active' => 'contact',
         ]);
-}
+    }
 
     public function json()
     {
@@ -246,16 +246,15 @@ class ArkeologiController extends Controller
     //         'arkeologis' => Arkeologi::all(),
     //     ]);
     // }
-    public function test(){
-        return view('user.test',[
+    public function test()
+    {
+        return view('user.test', [
             'title' => 'test',
             'active' => 'test',
             // 'arkeologis' => Arkeologi::all(),
         ]);
     }
-    public function updaftar()
-    {
-    }
+    public function updaftar() {}
 
     public function create()
     {

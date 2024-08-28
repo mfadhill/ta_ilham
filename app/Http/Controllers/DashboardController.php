@@ -257,7 +257,7 @@ class DashboardController extends Controller
                 $existingImage = Image::where('image', $image)->where('id_lokasi', $id)->first();
                 if (!$existingImage) {
                     Image::create([
-                        'image' => $image,
+                        'image' => $image, 
                         'id_lokasi' => $id
                     ]);
                 } else {

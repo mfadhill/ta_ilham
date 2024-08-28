@@ -22,7 +22,7 @@ class DaftarController extends Controller
     public function home()
     {
         $bahari = DB::table('daftars')
-            ->where('kategori', 'Bahari')->paginate(6);
+            ->where('kategori', 'Bahari')->paginate(8);
         $pemandangan = DB::table('daftars')
             ->where('kategori', 'Pemandangan')->paginate(6);
         $sejarah = DB::table('daftars')
